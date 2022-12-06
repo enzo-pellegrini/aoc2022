@@ -6,9 +6,6 @@ const [firstSection, secondSection] = text
   .split("\n\n")
   .map((section) => section.split("\n"));
 
-/**
- * @param {string} text
- */
 const parseMatrix = (text) => {
   const parseMatrixLine = (line) => {
     out = [];
@@ -53,7 +50,7 @@ console.log("Part 1", tops(state).join(""));
 
 state = parseMatrix(firstSection);
 commands.forEach(([count, src, dst], index) => {
-  buf = [];
+  const buf = [];
   for (let i = 0; i < count; i++) {
     buf.push(state[src - 1].pop());
   }
